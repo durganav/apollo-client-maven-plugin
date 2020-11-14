@@ -2,9 +2,6 @@ package com.lahzouz.java.graphql.client.tests
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver
 
-/**
- * @author AOUDIA Moncef
- */
 class Query : GraphQLQueryResolver {
 
     private val books: List<Book>

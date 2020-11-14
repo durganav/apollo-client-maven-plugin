@@ -10,7 +10,7 @@ As a contributor, here are the guidelines we would like you to follow:
 	 - [Commit body](#body)
 	 - [Commit footer](#footer)
 - [WorkFlow](#branch)
-	 - [GitFlow](#gitflow)
+	 - 	[GithubFlow](#githubflow)
 - [Code formatter](#code-formatter)
 
 
@@ -108,15 +108,11 @@ More information about [conventional commits](https://www.conventionalcommits.or
 
 ## <a name="workflow"></a>WorkFlow
 
-### <a name="gitflow"></a> GitFlow
+### <a name="githubflow"></a> GithubFlow
 
-We adopt towards to [GitFlow](http://nvie.com/posts/a-successful-git-branching-model/) which is a Git workflow design that was first published and made popular by Vincent Driessen at nvie.
-
-Cheatsheet [GitFlow](https://danielkummer.github.io/git-flow-cheatsheet/).
-
-Create a new pull request on Bitbucket (only if Bitbucket don't find any conflict).
-
-French article about [GitFlow](https://fr.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) by Atlassian.
+We adopt towards to [GithubFlow](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/github-flow)
+which is GitHub flow is a lightweight, branch-based workflow that supports teams and projects where deployments are made regularly.
+This guide explains how and why GitHub flow works.
 
 ## <a name="code-formatter"></a>Code formatter
 

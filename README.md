@@ -20,7 +20,7 @@ A full usage example can be found in the [test project](https://github.com/sparo
    <dependency>
        <groupId>com.apollographql.apollo</groupId>
        <artifactId>apollo-runtime</artifactId>
-       <version>2.3.1</version>
+       <version>2.4.4</version>
    </dependency>
     <dependency>
         <groupId>com.squareup.okio</groupId>
@@ -36,7 +36,7 @@ A full usage example can be found in the [test project](https://github.com/sparo
    <dependency>
        <groupId>org.jetbrains.kotlin</groupId>
        <artifactId>kotlin-reflect</artifactId>
-       <version>1.4.0</version>
+       <version>1.4.10</version>
    </dependency>
 </dependencies>
 ```
@@ -47,7 +47,7 @@ A full usage example can be found in the [test project](https://github.com/sparo
 <plugin>
     <groupId>com.github.sparow199</groupId>
     <artifactId>apollo-client-maven-plugin</artifactId>
-    <version>3.3.1</version>
+    <version>3.4.4-SNAPSHOT</version>
     <executions>
         <execution>
             <goals>
@@ -127,6 +127,18 @@ define mapping configuration then register your custom adapter:
         <Long>java.lang.Long</Long>
     </customTypeMap>
 </configuration>
+```
+
+```kotlin
+val longCustomTypeAdapter = object : CustomTypeAdapter<Long> {
+            override fun encode(value: Long): CustomTypeValue<*> {
+                return value.toString() as CustomTypeValue<String>
+            }
+
+            override fun decode(value: CustomTypeValue<*>): Long {
+                return (value.value as BigDecimal).toLong()
+            }
+        }
 ```
 
 ### Using Apollo Client

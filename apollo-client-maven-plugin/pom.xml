@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.github.sparow199</groupId>
         <artifactId>apollo-client-maven-plugin-parent</artifactId>
-        <version>3.3.1</version>
+        <version>3.4.4-SNAPSHOT</version>
         <relativePath>..</relativePath>
     </parent>
 
@@ -16,11 +16,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+        <ant.version>1.10.9</ant.version>
         <maven-plugin.version>3.6.0</maven-plugin.version>
         <maven-project.version>2.2.1</maven-project.version>
-        <apollo.version>2.3.1</apollo.version>
-        <httpclient.version>4.5.12</httpclient.version>
-        <okio.version>2.8.0</okio.version>
+        <apollo.version>2.4.4</apollo.version>
+        <moshi-kotlin.version>1.11.0</moshi-kotlin.version>
+        <okio.version>2.9.0</okio.version>
+        <okhttp.version>4.9.0</okhttp.version>
     </properties>
 
     <name>apollo-client-maven-plugin</name>
@@ -29,6 +31,11 @@
 
 
     <dependencies>
+        <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant</artifactId>
+            <version>${ant.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-plugin-api</artifactId>
@@ -56,14 +63,24 @@
             <version>${apollo.version}</version>
         </dependency>
         <dependency>
+            <groupId>com.squareup.moshi</groupId>
+            <artifactId>moshi-kotlin</artifactId>
+            <version>${moshi-kotlin.version}</version>
+        </dependency>
+        <dependency>
             <groupId>com.squareup.okio</groupId>
             <artifactId>okio</artifactId>
             <version>${okio.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>${httpclient.version}</version>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>${okhttp.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>logging-interceptor</artifactId>
+            <version>${okhttp.version}</version>
         </dependency>
     </dependencies>
 

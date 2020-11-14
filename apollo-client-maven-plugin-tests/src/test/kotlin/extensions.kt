@@ -5,9 +5,6 @@ import com.apollographql.apollo.api.Response
 import com.apollographql.apollo.exception.ApolloException
 import java.util.concurrent.CompletableFuture
 
-/**
- * @author AOUDIA Moncef
- */
 fun <T> ApolloCall<T>.toCompletableFuture(): CompletableFuture<Response<T>> {
     val completableFuture = CompletableFuture<Response<T>>()
 
@@ -17,15 +14,17 @@ fun <T> ApolloCall<T>.toCompletableFuture(): CompletableFuture<Response<T>> {
         }
     }
 
-    enqueue(object : ApolloCall.Callback<T>() {
-        override fun onResponse(response: Response<T>) {
-            completableFuture.complete(response)
-        }
+    enqueue(
+        object : ApolloCall.Callback<T>() {
+            override fun onResponse(response: Response<T>) {
+                completableFuture.complete(response)
+            }
 
-        override fun onFailure(e: ApolloException) {
-            completableFuture.completeExceptionally(e)
+            override fun onFailure(e: ApolloException) {
+                completableFuture.completeExceptionally(e)
+            }
         }
-    })
+    )
 
     return completableFuture
 }
